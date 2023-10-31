@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="inscription.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Inscription</h2>
+        <form action="traitement.php" method="post">
+            <div class="form-group">
+                <label for="noms">Noms :</label>
+                <input type="text" id="noms" name="noms" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+                <label for="tel">Téléphone :</label>
+                <input type="tel" id="tel" name="tel" required>
+            </div>
+            <div class="form-group">
+                <label for="mail">Email :</label>
+                <input type="email" id="mail" name="mail" required>
+            </div>
+            <div class="form-group">
+                <label for="entreprise">Entreprise :</label>
+                <input type="text" id="entreprise" name="entreprise" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Adresse :</label>
+                <input type="text" id="adresse" name="adresse" required>
+            </div>
+            <div class="form-group">
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="mdp" required>
+            </div>
+            <button type="submit">Inscription</button>
+        </form>
+        <p>Vous avez déjà un compte ? <a href="connexion.html">Connectez-vous !</a></p>
+    </div>
+</body>
+</html>

@@ -124,13 +124,13 @@ h5 {
 #tourisme h2 {
   padding-top: 60px;
 }
-#ocean {
+#formation {
   background: url(media/formation.jpg);
 }
-#chateau {
+#technique {
   background: url(media/technique.JPG);
 }
-#phare {
+#bureautique {
   background: url(media/bureautique.JPG);
 }
 
@@ -153,10 +153,10 @@ h5 {
   padding-top: 15px;
   box-shadow: 4px 4px 0 1px rgba(90,161,43,1);
 }
-#tourisme #chateau, #tourisme #vignoble {
+#tourisme #technique, #tourisme #vignoble {
   float: right;
 }
-#chateau p, #vignoble p {
+#technique p, #vignoble p {
   float: left;
   background-color: cyan;
   margin-left: -180px;
@@ -194,26 +194,6 @@ button:hover {
   color: #FFFAE1;
   cursor: pointer;
   transition: 0.3s ease-in-out;
-}
-#deuxiemeTrait {
-  height: 1px;
-  width: 75%;
-  background-color: #FFFAE1;
-  margin: 60px auto;
-}
-#copyrightEtIcons {
-  display: flex;
-  margin-bottom: 20px;
-  padding: 0 10%;
-}
-#copyright {
-  width: 50%;
-  text-align: left;
-  color: #FFFAE1;
-}
-#icons {
-  width: 50%;
-  text-align: right;
 }
 #icons a {
   display: inline-block;
@@ -353,3 +333,14 @@ button:hover {
   margin: 5px 0;
 }
 
+/* Styles pour la connexion */
+
+.container_connexion {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.form_footer {
+  margin-left: 155px;
+}

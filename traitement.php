@@ -25,7 +25,8 @@ $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 $sql = "INSERT INTO stagiaires (Noms, PrenomS, TelS, email, EntrepriseS, AdresseS, mdp) VALUES ('$noms', '$prenom', '$tel', '$mail', '$entreprise', '$adresse', '$mdp')";
 
 if ($connexion->query($sql) === TRUE) {
-    echo "Inscription réussie !";
+    header("Location: index.html");
+    exit(); // Assurez-vous de terminer le script après la redirection
 } else {
     echo "Erreur : " . $sql . "<br>" . $connexion->error;
 }

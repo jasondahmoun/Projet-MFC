@@ -25,6 +25,11 @@ $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 $sql = "INSERT INTO stagiaires (Noms, PrenomS, TelS, email, EntrepriseS, AdresseS, mdp) VALUES ('$noms', '$prenom', '$tel', '$mail', '$entreprise', '$adresse', '$mdp')";
 
 if ($connexion->query($sql) === TRUE) {
+
+     // Récupérer l'ID de la dernière insertion
+     $nouvelUtilisateurID = $connexion->insert_id;
+     $_SESSION['IdS'] = $nouvelUtilisateurID;
+     
     header("Location: index.html");
     exit(); // Assurez-vous de terminer le script après la redirection
 } else {

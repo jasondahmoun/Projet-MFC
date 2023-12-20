@@ -27,6 +27,29 @@
 
   </header>
 
+  <div class="profil-container">
+
+    <div class="profil-info">
+      <h2>Profil de <?php echo $stagiaireData['NomS'] . " " . $stagiaireData['PrenomS']; ?></h2>
+      <p>Téléphone : <?php echo $stagiaireData['telS']; ?></p>
+      <p>Email : <?php echo $stagiaireData['email']; ?></p>
+      <p>Entreprise : <?php echo $stagiaireData['EntrepriseS']; ?></p>
+      <p>Adresse : <?php echo $stagiaireData['AdresseS']; ?></p>
+    </div>
+
+    <div class="fiches-inscription">
+      <h2>Fiches d'Inscription</h2>
+      <ul>
+        <?php
+        while ($row = $resultFiches->fetch_assoc()) {
+            echo "<li>Date d'Inscription : " . $row['DateInscription'] . ", ID de la Fiche : " . $row['IdFiche'] . "</li>";
+        }
+        ?>
+      </ul>
+    </div>
+
+  </div>
+  
   <footer>
     <div class="footer-content">
         <div class="footer-left">

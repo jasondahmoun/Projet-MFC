@@ -5,13 +5,6 @@ $utilisateur = "root";
 $motDePasse = "";
 $nomBaseDeDonnees = "projetmfc";
 
-function debug_to_console($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 
 // Connexion à la base de données
 $connexion = new mysqli($serveur, $utilisateur, $motDePasse, $nomBaseDeDonnees);
@@ -28,7 +21,6 @@ $password = $_POST["password"];
 // Requête SQL pour vérifier l'existence de l'utilisateur dans la base de données
 $sql = "SELECT * FROM stagiaires WHERE email='$username' AND Mdp='$password'";
 $resultat = $connexion->query($sql);
-debug_to_console("Test");
 
 // Vérification des résultats de la requête
 if ($resultat->num_rows > 0) {

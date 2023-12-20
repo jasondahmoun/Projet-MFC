@@ -22,6 +22,26 @@ h2 {
   padding-top: 30px;
   font-size: 2em;
 }
+
+.formation {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h8 {
+  color: #333;
+}
+
+.price, .duration {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #888;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -307,31 +327,14 @@ button:hover {
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease-in-out;
+  margin-top: 30px;
 }
 
 .inscription-button a:hover {
   background-color: #b67e35;
 }
 
-/* Styles pour le modèle de formation */
-.formation {
-  background-color: #FFFAE1;
-  padding: 20px;
-  border: 1px solid #b67e35;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
 
-.formation h3 {
-  font-size: 1.5em;
-  margin: 0;
-}
-
-.formation p {
-  margin: 5px 0;
-}
 
 /* Styles pour la connexion */
 

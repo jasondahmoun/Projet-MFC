@@ -15,7 +15,6 @@
           <nav>
             <ul>
               <li id="logo"><a href="index.html">Maison Formation Continue</a></li>
-              <li><a href="profil.html">Profil</a></li>
               <li><a href="contact.html">Nous contacter</a></li>
               <li><a href="formation.php">Formation</a></li>
               <li><a href="mfc.html">Groupe MFC</a></li>
@@ -43,21 +42,20 @@
 <section id="inscription-section">
       <div class="inscription-text">
         <H3>Fiche d'inscription</H3>
-        <input type="text" placeholder="Nom" required>
-        <input type="email" placeholder="Prénom" required>
-        <input type="date" placeholder="Date de la formation" required>
-        <input type="text" placeholder="Nom de la formation" required>
-          <!-- <p>
-              Pour toute demande de formation, veuillez appuyer sur télécharger le PDF, le remplir, puis nous l'envoyer à l'adresse e-mail <a href="mailto:contact@mfc.fr">contact@mfc.fr</a>. Une validation vous sera renvoyée par la suite.
-          </p> -->
+        <form id="inscription-form" action="index.php" method="post">
+    <input type="text" name="nom" placeholder="Nom" required>
+    <input type="text" name="prenom" placeholder="Prénom" required>
+    <input type="date" name="date_formation" placeholder="Date de la formation" required>
+    <input type="text" name="nom_formation" placeholder="Nom de la formation" required>
+    <button type="submit" style="margin-left: 25%" class="inscription-button">S'inscrire</button>
+</form>
     
-      <div style="margin-left: 50%" class="inscription-button">
-          <a href="lien_vers_votre_fiche_d'inscription.pdf" download="fiche_inscription.pdf">
-              S'inscrire
-          </a>
-      </div>
+      
     </div>
   </section>
+
+  
+
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>

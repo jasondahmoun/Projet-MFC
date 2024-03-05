@@ -29,18 +29,6 @@ h2 {
   margin-bottom: 20px;
 }
 
-h8 {
-  color: #333;
-}
-
-.price, .duration {
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.description {
-  color: #888;
-}
 
 a {
   text-decoration: none;
@@ -298,21 +286,7 @@ button:hover {
   transition: 0.3s ease-in-out;
 }
 
-/* Styles pour la section d'inscription */
-#inscription-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px;
-  background-color: #FFFAE1;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 
-.inscription-text {
-  flex: 1;
-  margin-right: 20px;
-}
 
 .inscription-text p {
   font-size: 1.2em;

@@ -34,6 +34,13 @@ a {
   text-decoration: none;
   color: black;
 }
+
+inscription-message {
+  text-align: center;
+  margin-top: 20px; 
+}
+
+
 /* ******************* NAVBAR ******************* */
 nav {
   overflow: hidden;
@@ -215,21 +222,20 @@ button:hover {
   transition: 0.1s;
 }
 
-/* Styles pour la nouvelle section */
 #nouvelleSection {
-  background-color: #FFFAE1; /* Couleur de fond */
-  padding: 20px 0; /* Rembourrage supérieur et inférieur */
+  background-color: #FFFAE1; 
+  padding: 20px 0; 
 }
 
 .contenuSection {
-  display: flex; /* Affichage en mode flex pour aligner les éléments côte à côte */
-  justify-content: space-between; /* Espace entre les éléments */
-  align-items: center; /* Alignement vertical au centre */
-  padding: 0 10%; /* Rembourrage gauche et droit */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 10%; 
 }
 
 .texteSection {
-  width: 45%; /* Largeur du texte (ajustez selon vos besoins) */
+  width: 45%; 
 }
 
 .texteSection h2 {
@@ -244,8 +250,8 @@ button:hover {
 }
 
 .imageSection {
-  width: 45%; /* Largeur de l'image (ajustez selon vos besoins) */
-  text-align: center; /* Centrer l'image horizontalement */
+  width: 45%; 
+  text-align: center; 
 }
 
 .imageSection img {
@@ -259,24 +265,24 @@ button:hover {
   transition: 0.6s ease-in-out;
 }
 
-/* Styles pour la section de boutons */
+
 #boutonsSection {
-  background-color: #FFFAE1; /* Couleur de fond */
-  padding: 20px 0; /* Rembourrage supérieur et inférieur */
-  text-align: center; /* Centrer les boutons horizontalement */
+  background-color: #FFFAE1; 
+  padding: 20px 0; 
+  text-align: center; 
 }
 
 .bouton {
-  display: inline-block; /* Affichage en ligne pour les boutons côte à côte */
-  margin: 0 20px; /* Espacement entre les boutons (ajustez selon vos besoins) */
+  display: inline-block; 
+  margin: 0 20px;
 }
 
 .bouton a {
   text-decoration: none;
   color: black;
   font-size: 1.5em;
-  padding: 15px 30px; /* Rembourrage des boutons (ajustez selon vos besoins) */
-  background-color: #b67e35; /* Couleur de fond des boutons */
+  padding: 15px 30px;
+  background-color: #b67e35; 
   border-radius: 8px;
 }
 
@@ -308,10 +314,6 @@ button:hover {
 .inscription-button a:hover {
   background-color: #b67e35;
 }
-
-
-
-/* Styles pour la connexion */
 
 .container_connexion {
   align-items: center;

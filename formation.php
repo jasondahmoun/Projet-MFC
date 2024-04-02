@@ -42,14 +42,18 @@
 <section id="inscription-section">
       <div class="inscription-text">
         <H3>Fiche d'inscription</H3>
-        <form id="inscription-form" action="index.php" method="post">
+        <form id="inscription-form" action="formation.php" method="post">
     <input type="text" name="nom" placeholder="Nom" required>
     <input type="text" name="prenom" placeholder="Prénom" required>
     <input type="date" name="date_formation" placeholder="Date de la formation" required>
     <input type="text" name="nom_formation" placeholder="Nom de la formation" required>
     <button type="submit" style="margin-left: 25%" class="inscription-button">S'inscrire</button>
-</form>
-    
+        </form>
+        <?php if(isset($alert_message)): ?>
+            <div id="inscription-message" style="margin-left: 43.5%">
+        <p><?php echo $alert_message; ?></p>
+            </div>
+        <?php endif; ?>
       
     </div>
   </section>

@@ -12,9 +12,44 @@ if ($connexion->connect_error) {
     die("Échec de la connexion à la base de données : " . $connexion->connect_error);
 }
 
+// Traitement du formulaire d'inscription
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $dateFormation = $_POST['date_formation'];
+    $nomFormation = $_POST['nom_formation'];
+
+    // Vérifier si le stagiaire existe
+    $sqlStagiaire = "SELECT idS FROM stagiaires WHERE Noms = '$nom' AND PrenomS = '$prenom'";
+    $resultStagiaire = $connexion->query($sqlStagiaire);
+
+    // Vérifier si la formation existe
+    $sqlFormation = "SELECT IdF FROM formation WHERE IntituleF = '$nomFormation'";
+    $resultFormation = $connexion->query($sqlFormation);
+
+    // Si le stagiaire et la formation existent, insérer dans la table ficheInscription
+    if ($resultStagiaire->num_rows > 0 && $resultFormation->num_rows > 0) {
+        $rowStagiaire = $resultStagiaire->fetch_assoc();
+        $idStagiaire = $rowStagiaire['idS'];
+
+        $rowFormation = $resultFormation->fetch_assoc();
+        $idFormation = $rowFormation['IdF'];
+
+        // Insérer les données dans la table ficheInscription
+        $sqlInsert = "INSERT INTO ficheInscription (DateInscription, IdF, IdS) VALUES ('$dateFormation', '$idFormation', '$idStagiaire')";
+        if ($connexion->query($sqlInsert) === TRUE) {
+            $alert_message = "Fiche d'inscription ajoutée avec succès.";
+        } else {
+            $alert_message = "Erreur lors de l'inscription : " . $connexion->error;
+        }
+    } else {
+        $alert_message = "Stagiaire ou formation non trouvé.";
+    }
+}
+
+// Affichage des résultats de la recherche
 $searchTerm = isset($_GET['search-input']) ? $_GET['search-input'] : '';
 $valider = isset($_GET['search-button']) ? $_GET['search-button'] : '';
-
 
 if (isset($valider) && !empty($searchTerm)) {
     $resultat = $connexion->query("SELECT * FROM Formation WHERE IntituleF LIKE '%$searchTerm%' OR DescriptionF LIKE '%$searchTerm%' OR Theme LIKE '%$searchTerm%'");
@@ -64,41 +99,6 @@ if ($resultat->num_rows > 0) {
     echo "Aucune formation trouvée.";
 }
 
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $dateFormation = $_POST['date_formation'];
-    $nomFormation = $_POST['nom_formation'];
-
-    // Vérifier si le stagiaire existe
-    $sqlStagiaire = "SELECT idS FROM stagiaires WHERE Noms = '$nom' AND PrenomS = '$prenom'";
-    $resultStagiaire = $connexion->query($sqlStagiaire);
-
-    // Vérifier si la formation existe
-    $sqlFormation = "SELECT IdF FROM formation WHERE IntituleF = '$nomFormation'";
-    $resultFormation = $connexion->query($sqlFormation);
-
-    // Si le stagiaire et la formation existent, insérer dans la table ficheInscription
-    if ($resultStagiaire->num_rows > 0 && $resultFormation->num_rows > 0) {
-        $rowStagiaire = $resultStagiaire->fetch_assoc();
-        $idStagiaire = $rowStagiaire['idS'];
-
-        $rowFormation = $resultFormation->fetch_assoc();
-        $idFormation = $rowFormation['IdF'];
-
-        // Insérer les données dans la table ficheInscription
-        $sqlInsert = "INSERT INTO ficheInscription (DateInscription, IdF, IdS) VALUES ('$dateFormation', '$idFormation', '$idStagiaire')";
-        if ($connexion->query($sqlInsert) === TRUE) {
-            echo "Fiche d'inscription ajoutée avec succès.";
-        } else {
-            echo "Erreur: " . $sqlInsert . "<br>" . $connexion->error;
-        }
-    } else {
-        echo "Stagiaire ou formation non trouvé.";
-    }
-}
-
+// Fermer la connexion à la base de données
 $connexion->close();
 ?>
